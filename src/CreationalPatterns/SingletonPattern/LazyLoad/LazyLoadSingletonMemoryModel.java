@@ -5,10 +5,11 @@ package CreationalPatterns.SingletonPattern.LazyLoad;
     when get instance is called the first time, without need for synchronization block like in other example.
  */
 public class LazyLoadSingletonMemoryModel {
+    private LazyLoadSingletonMemoryModel(){}
     private class InstanceHolder{
         public static final LazyLoadSingletonMemoryModel INSTANCE = new LazyLoadSingletonMemoryModel();
     }
-    public LazyLoadSingletonMemoryModel getInstance(){
+    public static LazyLoadSingletonMemoryModel getInstance(){
         return InstanceHolder.INSTANCE;
     }
 }
